@@ -1,6 +1,7 @@
 ---
 layout: page
 class: "Introduction to Python Programming"
+link: https://www.idtech.com/courses/tutoring-python#/reg-flow/tutoring
 institution: iD Tech Camp
 location: "Seattle, WA"
 title: "Virtual Tech Camp Instructor"

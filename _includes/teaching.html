@@ -1,5 +1,14 @@
 <li class="cvitem">
-    <strong class="cvitem-title">{{t.title}}, {{t.class}}</strong>
+    {% if t.link %}
+        <strong class="cvitem-title">
+            {{t.title}}, 
+            <a href="{{ t.link }}" target="_blank">
+                {{t.class}}
+            </a>
+        </strong>
+    {% else %}    
+        <strong class="cvitem-title">{{t.title}}, {{t.class}}</strong>
+    {% endif %}
     <div class="display-teaching-table">
         <div class="ljust display-teaching-tablecell">
             <span class="institution">{{t.institution}},</span> 
