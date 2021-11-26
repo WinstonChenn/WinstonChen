@@ -6,6 +6,7 @@ description:
 nav: true
 display_categories: [research, work, fun]
 horizontal: false
+importance: 1
 ---
 <div class="projects">
   {% if site.enable_project_categories and page.display_categories %}
