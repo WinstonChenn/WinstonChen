@@ -1,0 +1,19 @@
+<li class="teaching-item">
+    <strong class="teaching-item-title">{{t.title}}, {{t.class}}</strong>
+    <div class="display-teaching-table">
+        <div class="ljust display-teaching-tablecell">
+            <span class="institution">{{t.institution}},</span> 
+            {{t.location}}
+        </div>
+        <div class="rjust display-teaching-tablecell">
+            {% if t.end_year == "Present" %}
+                {{t.start_month}}/{{t.start_year}} - Present
+            {% else %}
+                {{t.start_month}}/{{t.start_year}} - {{t.end_month}}/{{t.end_year}}
+            {% endif %}
+        </div>
+    </div>
+    <div class="description">
+        {{t.description}}
+    </div>
+</li>

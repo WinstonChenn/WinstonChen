@@ -361,7 +361,7 @@ footer.sticky-bottom {
   }
 
   .grid-item {
-    width: 250px;
+    width: 375px;
     margin-bottom: 10px;
   }
 
@@ -495,6 +495,39 @@ footer.sticky-bottom {
       }
     }
   }
+}
+
+// Teaching
+.teaching-list {
+	list-style-type: none;
+	padding: 0em 1em 0em 1em;
+}
+
+.teaching-item {
+	margin: 0em 0em 2em 0em;
+}
+
+.teaching-item-title {
+	font-weight: bold;
+  font-size: 18px;
+	margin: 0px 0px 3px 0px;
+}
+
+.display-teaching-table {
+	display: table;
+	width: 100%;
+}
+
+.display-teaching-tablecell {
+	display: table-cell;
+}
+
+.ljust {
+	text-align: left;
+}
+
+.rjust {
+	text-align: right;
 }
 
 // Rouge Color Customization
