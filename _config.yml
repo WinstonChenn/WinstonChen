@@ -105,6 +105,9 @@ collections:
   teaching: 
     output: true
     permalink: /teaching/:path/
+  awards: 
+    output: true
+    permalink: /awards/:path/
 
 news_limit: 5
 

@@ -7,7 +7,7 @@ nav: true
 ---
 
 {% assign teaching = site.teaching | reverse %}
-<ul class="teaching-list">
+<ul class="cvlist">
     {% for t in teaching %}
         {% include teaching.html %}
     {% endfor %}
