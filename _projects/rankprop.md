@@ -11,13 +11,14 @@ Rankprop is a ranking algorithm that exploits global network structure of simila
 
 {% responsive_image path: assets/img/rankprop_logo.png title: "Rankprop Logo" class: "img-fluid rounded z-depth-1" %}
 More details about Rankprop can be found [here](https://rankprop.gs.washington.edu/) <br/>
-Rankprop was developed for the task of protein homology detection, which usually invovles two steps:
+
+Rankprop was developed for the task of protein sequence homology detection, which usually invovles two steps:
 1. Generating a high-qualitied protein similarity ranking, where the top of the ranking contains proteins that are similar to the query protein. 
-2. Finds a cutoff point for positive and negative homology predictions
+2. Finds a cutoff point between positive and negative homology predictions
 
 Rankprop effectively solved the 1st step of the problem by generating superior protein similarity rankings compared to other methods such as [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi). For the 2nd step, there wasn't a clear solution that Rankprop or network propagation can offer. <br/>
 
-<b>In this research project</b>, we applied the [knockoff filter](https://web.stanford.edu/group/candes/knockoffs/) to the cutoff selection of Rankprop's ranking result. Knockoff filter is statistical tool [proposed by Rina Foygel Barber and Emmanuel Candès in 2015](https://candes.su.domains/publications/downloads/FDR_regression.pdf), which controls the False Discovery Rate (FDR) in a variable selection task. 
+<span style="font-size:20px;"><b>In this research project</b></span>, we applied the [knockoff filter](https://web.stanford.edu/group/candes/knockoffs/) to the cutoff selection for Rankprop's ranking result. Knockoff filter is statistical tool [proposed by Rina Foygel Barber and Emmanuel Candès in 2015](https://candes.su.domains/publications/downloads/FDR_regression.pdf), which controls the False Discovery Rate (FDR) in a variable selection task. 
 The knockoff FDR control invovles two steps:
 1. Generating a set of "knockoff variables" based on the original variables.
 2. Use the knockoff variables as a negative control to identify those trully important original variables.
