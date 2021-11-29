@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Error-controlled DNN Interaction Detection
-description: 5/2021 - Present
+description: May 2021 - Present
 img: assets/img/NID.gif
 importance: 2
 category: research
