@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Python Engineering Intern"
-link: https://vkuan.github.io/index.html
+link: https://www.nvidia.com/en-us/
 institution: NVIDIA
 location: "Santa Clara, CA"
 description: "
