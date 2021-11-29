@@ -6,7 +6,7 @@ location: "Yakima, WA"
 title: "STEM ASB Facilitator"
 description: "
 •	Designed and taught a week-long engineering design course for 30+ alternative high school students in Wapato, Washington.<br/>
-•	Lead daily lecture and facilitated group discussion and group design project
+•	Lead daily lecture and facilitated group discussion and group design project.<br/>
 •	Facilitated small groups of discussions and collboration on water rocket making.
 "
 start_year: 2019
