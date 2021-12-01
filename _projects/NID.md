@@ -36,3 +36,6 @@ This project aims at combining a recently descibed DNN feature interaction detec
 </div>
 
 As shown in the diagram above, our approch invovles adding a pairwise coupling layer (inspired by [DeepPINK](https://arxiv.org/pdf/1809.01185.pdf)) to the DNN models that takes the original data and knockoff data as input. By computing the interaction scores for both original feature interacitons and knockoff feature interactions, we can use knockoff interactions as a negative control to filter out insignificant interactions and find cutoff for interaction predctions that achieves a desired False Discovery Rate (FDR).
+
+Related Links:
+- Project <a href="../../assets/pdf/interactionfdr.pdf" target="_blank">proposal</a>

@@ -61,3 +61,4 @@ Each protein within the original ranking would then compete with their knockoff 
 Related Links:
 - My [talk](https://www.youtube.com/watch?v=dZ4pvAE1OHg&t=1s) about this project at [UW's 24th Annual Undergraduate Research Symposium](https://www.washington.edu/undergradresearch/symposium/)
 - <a href="../../assets/pdf/fdr_rankprop_slides.pdf" target="_blank">Slides</a> about this project
+- Project <a href="../../assets/pdf/linkpred.pdf" target="_blank">proposal</a>
