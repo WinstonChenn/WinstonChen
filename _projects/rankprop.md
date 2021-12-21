@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Error-controlled Rankprop
+title: Confidence Estimation for Rankprop
 description: July 2019 - Present
 img: assets/img/rankprop.jpg
 importance: 1
@@ -12,16 +12,18 @@ Rankprop is a ranking algorithm that exploits global network structure of simila
 {% responsive_image path: assets/img/rankprop_logo.png title: "Rankprop Logo" class: "img-fluid rounded z-depth-1" %}
 More details about Rankprop can be found [here](https://rankprop.gs.washington.edu/) <br/>
 
-Rankprop was developed for the task of protein sequence homology detection, which usually invovles two steps:
-1. Generating a high-qualitied protein similarity ranking, where the top of the ranking contains proteins that are similar to the query protein. 
-2. Finds a cutoff point between positive and negative homology predictions
+Rankprop was developed for the task of detecting homology proteins from a protein database given a query protein. This task usually invovles two steps:
+1. Generating a high-quality protein similarity ranking, where the top of the ranking contains proteins that are similar to the query protein. 
+2. Finds a cutoff point between positive and negative homology predictions.
 
-Rankprop effectively solved the 1st step of the problem by generating superior protein similarity rankings compared to other methods such as [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi). For the 2nd step, there wasn't a clear solution that Rankprop or network propagation can offer. <br/>
+Rankprop effectively solved the 1st step of the problem by generating superior protein similarity rankings compared to other methods such as [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi). However, for the 2nd step, there wasn't a clear solution that Rankprop or network propagation can offer. <br/>
 
-<span style="font-size:20px;"><b>In this research project</b></span>, we applied the [knockoff filter](https://web.stanford.edu/group/candes/knockoffs/) to the cutoff selection for Rankprop's ranking result. Knockoff filter is statistical tool [proposed by Rina Foygel Barber and Emmanuel Candès in 2015](https://candes.su.domains/publications/downloads/FDR_regression.pdf), which controls the False Discovery Rate (FDR) in a variable selection task. 
+<span style="font-size:20px;"><b>In this research project</b></span>, we applied the [knockoff filter](https://web.stanford.edu/group/candes/knockoffs/) to compute a confidence estimation, [q-value](https://en.wikipedia.org/wiki/Q-value_(statistics)), for all the proteins within the Rankprop ranking. Using q-values, we can select homology prediction cutoffs that meets desired false discovery rate (FDR), and therefore address Rankprop's cutoff selection problem in an error-controlled fasion.
+
+Knockoff filter is statistical tool [proposed by Rina Foygel Barber and Emmanuel Candès in 2015](https://candes.su.domains/publications/downloads/FDR_regression.pdf), which controls the False Discovery Rate (FDR) in a variable selection task. 
 The knockoff FDR control invovles two steps:
 1. Generating a set of "knockoff variables" based on the original variables.
-2. Use the knockoff variables as a negative control to identify those trully important original variables.
+2. Use the knockoff variables as a negative control to identify those trully important original variables, by computing q-values.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -36,7 +38,7 @@ The knockoff FDR control invovles two steps:
 </div>
 More details about the knockoff filter can be found [here](https://web.stanford.edu/group/candes/knockoffs/) <br/>
 
-In order to apply the knockoff filter on Rankprop, we proposed a novel method that generates knockoff for network data, more specifically, the protein similarity network used by Rankprop to generate ranking.<br/>
+In order to apply the knockoff filter on Rankprop, we proposed a novel method that generates knockoff for network data. In this project, we applied this method to generate "knockoff" protein similarity network given the original one.<br/>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% responsive_image path: assets/img/rankprop_knockoff_gen.png title: "Knockoff Generation" class: "img-fluid rounded z-depth-1" %}
@@ -46,8 +48,8 @@ In order to apply the knockoff filter on Rankprop, we proposed a novel method th
     Conceptual representation of generating network knockoff
 </div>
 
-For both the original network and knockoff network, we can then generate a set of ranking, which I will call them the original ranking and the knockoff ranking. <br/>
-Each protein within the original ranking would then compete with their knockoff counterpart. Those real homologies would stand out in the "competition", we can then use knockoff filter to find FDR-controlled cutoff for protein homology prediction.
+Using either the original network or knockoff network, we can generate a Rankprop ranking. We call the ranking generated with original network the original ranking and the ranking generated from knokocff network the knockoff ranking. <br/>
+Each protein within the original ranking would then "compete" with their knockoff counterpart, in terms of the Rankprop score. In principle, those real homologies would stand out from the "competition", and therefore have a low q-value. Lastly, using the computed q-value, we can find FDR-controlled cutoff for protein homology prediction.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% responsive_image path: assets/img/rankprop_knockoff_rank.png title: "Knockoff ranking" class: "img-fluid rounded z-depth-1" %}
