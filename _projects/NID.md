@@ -24,7 +24,7 @@ Despite their outstanding empirical performance, [deep neural networks (DNNs)](h
 
 Inspired by [existing works](https://arxiv.org/pdf/1809.01185.pdf) which interpret a DNN model by selecting a subset of explanatory features subject to a controlled error rate. We are interested in detecting higher-order information captured by a DNN model, i.e., interactions between features. Modelling the fact that features often have joint effects with other features is especially useful for scientific discoveries and hypothesis validation. For example, gene-gene, gene-environment, gene-drug and gene-disease interactions are key elements in explaining genetic mechanisms in biomedical applications.
 
-This project aims at combining a recently descibed DNN feature interaction detection algorithm ([NID](https://arxiv.org/pdf/1705.04977.pdf)) with the [knockoff filter](https://web.stanford.edu/group/candes/knockoffs/) to produced error-controled DNN interaction predictio results. 
+This project aims at combining a recently descibed DNN feature interaction detection algorithm ([NID](https://arxiv.org/pdf/1705.04977.pdf)) with the [knockoff filter](https://web.stanford.edu/group/candes/knockoffs/) to produce error-controled DNN interaction prediction results. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
