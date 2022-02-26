@@ -39,3 +39,4 @@ As shown in the diagram above, our approch invovles adding a pairwise coupling l
 
 Related Links:
 - Project <a href="../../assets/pdf/interactionfdr.pdf" target="_blank">proposal</a>
+- <a href="https://docs.google.com/presentation/d/12IL4a6uFFz89EPAgrQ7M0iAppqoHMpL-hY7RwWRPCcU/edit?usp=sharing" target="-blank">Slides</a> about this project
