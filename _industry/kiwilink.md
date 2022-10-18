@@ -11,6 +11,7 @@ description: "
 start_year: 2020
 start_month: 6
 date: 2020-6-1
-end_year: Present
+end_year: 2022
+end_month: 1
 link: https://vkuan.github.io/index.html
 ---

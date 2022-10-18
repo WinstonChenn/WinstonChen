@@ -15,8 +15,10 @@ social: true  # includes social icons at the bottom of the page
 resume: true
 ---
 
-I am a fourth-year undergraduate student at [UW ECE](https://www.ece.uw.edu/) studying Signal Processing. My research interest is developing trustworthy (intepretable & error-controlled) machine learning methods for biomedical applications.
+I graduated from [Department of Electrical & Computer Engineering](https://www.ece.uw.edu/) at the University of Washington in 2022. 
 
-I am part of the [Noble Research Lab](https://noble.gs.washington.edu/) and adviced by [William Stafford Noble](https://noble.gs.washington.edu/~wnoble/) and [Yang Lu](https://younglululu.github.io/)
+I am currently a research assistant at the [Noble Research Lab](https://noble.gs.washington.edu/) and working with [William Stafford Noble](https://noble.gs.washington.edu/~wnoble/) and [Yang Lu](https://younglululu.github.io/) on developing false discovery rate (FDR)-controlled machine learning method for protein homology prediction and biological feature (e.g. transcription factors) interaction detection.
 
-I have extensive experience applying with statistical tools ([knockoff filter](https://web.stanford.edu/group/candes/knockoffs/)) and machine learning methods ([ANN](https://en.wikipedia.org/wiki/Artificial_neural_network) & [network propagation](https://www.nature.com/articles/nrg.2017.38#:~:text=Network%20propagation%20transforms%20a%20short,candidates%20in%20a%20gene%20network.&text=Network%20propagation%20methods%20can%20be,modules%20that%20underlie%20human%20disease.)) to address biomedical problems, such as protein sequence homology detection & drug synergy prediction. See "projects" section for more details.
+My research interest is building trustworthy (interpretable & error-controlled) machine learning methods for various biometical applications. 
+
+I'm looking for PhD position starting Fall 2023. Feel free to reach out if you are interested in learning more about me!
