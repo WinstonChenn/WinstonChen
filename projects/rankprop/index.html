@@ -12,7 +12,7 @@
   Winston  Chen
 
 
-  | blog
+  | Confidence Estimation for Rankprop
 
 </title>
 <meta name="description" content="Aspiring ML researcher in computational biology.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://winstonchenn.github.io/blog/">
+<link rel="canonical" href="https://winstonchenn.github.io/projects/rankprop/">
 
 
 <!-- Dark Mode -->
@@ -80,8 +80,6 @@
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -171,8 +169,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -191,119 +189,96 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Confidence Estimation for Rankprop</h1>
+    <p class="post-description">July 2019 - Present</p>
+  </header>
+
+  <article>
+    <p>Rankprop is a ranking algorithm that exploits global network structure of similarity relationships among proteins in a database by performing <a href="https://www.nature.com/articles/nrg.2017.38" target="_blank" rel="noopener noreferrer">network propagation</a> on a protein similarity network with weighted edges. It is similar to the <a href="https://en.wikipedia.org/wiki/PageRank" target="_blank" rel="noopener noreferrer">PageRank</a> algorithm, which was the first algorithm used in Google search engine. <br></p>
+
+<p><img class="img-fluid rounded z-depth-1" src="/assets/resized/rankprop_logo-800x194.png" srcset="    /assets/resized/rankprop_logo-480x116.png 480w,    /assets/resized/rankprop_logo-800x194.png 800w,/ assets/img/rankprop_logo.png 851w" title="Rankprop Logo"></p>
+
+<p>More details about Rankprop can be found <a href="https://rankprop.gs.washington.edu/" target="_blank" rel="noopener noreferrer">here</a> <br></p>
+
+<p>Rankprop was developed for the task of detecting homology proteins from a protein database given a query protein. This task usually invovles two steps:</p>
+<ol>
+  <li>Generating a high-quality protein similarity ranking, where the top of the ranking contains proteins that are similar to the query protein.</li>
+  <li>Finds a cutoff point between positive and negative homology predictions.</li>
+</ol>
+
+<p>Rankprop effectively solved the 1st step of the problem by generating superior protein similarity rankings compared to other methods such as <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank" rel="noopener noreferrer">BLAST</a>. However, for the 2nd step, there wasn’t a clear solution that Rankprop or network propagation can offer. <br></p>
+
+<p><span style="font-size:20px;"><b>In this research project</b></span>, we applied the <a href="https://web.stanford.edu/group/candes/knockoffs/" target="_blank" rel="noopener noreferrer">knockoff filter</a> to compute a confidence estimation, <a href="https://en.wikipedia.org/wiki/Q-value_(statistics)" target="_blank" rel="noopener noreferrer">q-value</a>, for all the proteins within the Rankprop ranking. Using q-values, we can select homology prediction cutoffs that meets desired false discovery rate (FDR), and therefore address Rankprop’s cutoff selection problem in an error-controlled fasion.</p>
+
+<p>Knockoff filter is statistical tool <a href="https://candes.su.domains/publications/downloads/FDR_regression.pdf" target="_blank" rel="noopener noreferrer">proposed by Rina Foygel Barber and Emmanuel Candès in 2015</a>, which controls the False Discovery Rate (FDR) in a variable selection task. 
+The knockoff FDR control invovles two steps:</p>
+<ol>
+  <li>Generating a set of “knockoff variables” based on the original variables.</li>
+  <li>Use the knockoff variables as a negative control to identify those trully important original variables, by computing q-values.</li>
+</ol>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
-  <ul class="post-list">
-    
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/rankprop_original-480x669.png" srcset="    /assets/resized/rankprop_original-480x669.png 480w,/ assets/img/rankprop_original.png 568w" title="original variables">
 
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2021/diagrams/">a post with diagrams</a>
-      </h3>
-      <p>an example of a blog post with diagrams</p>
-      <p class="post-meta"> 1 min read &nbsp; &middot; &nbsp;
-        July 4, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a>
-      </h3>
-      <p>an example of a distill-style blog post and main elements</p>
-      <p class="post-meta"> 7 min read &nbsp; &middot; &nbsp;
-        May 22, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a>
-      </h3>
-      <p>a quick run down on accessing github metadata.</p>
-      <p class="post-meta"> 1 min read &nbsp; &middot; &nbsp;
-        September 28, 2020
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2020">
-          <i class="fas fa-calendar fa-sm"></i> 2020 </a>
-
-          
-
-          
-          &nbsp; &middot; &nbsp;
-            
-            <a href="/blog/category/sample-posts">
-              <i class="fas fa-tag fa-sm"></i> sample-posts</a> &nbsp;
-              
-            <a href="/blog/category/external-services">
-              <i class="fas fa-tag fa-sm"></i> external-services</a> &nbsp;
-              
-          
-    </p>
-    </li>
-
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/rankprop_knockoff-480x659.png" srcset="    /assets/resized/rankprop_knockoff-480x659.png 480w,/ assets/img/rankprop_knockoff.png 578w" title="knockoff variables">
+
+    </div>
+</div>
+<div class="caption">
+    The idea of original variables vs. knockoff variables
+</div>
+<p>More details about the knockoff filter can be found <a href="https://web.stanford.edu/group/candes/knockoffs/" target="_blank" rel="noopener noreferrer">here</a> <br></p>
+
+<p>In order to apply the knockoff filter on Rankprop, we proposed a novel method that generates knockoff for network data. In this project, we applied this method to generate “knockoff” protein similarity network given the original one.<br></p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/rankprop_knockoff_gen-480x208.png" srcset="    /assets/resized/rankprop_knockoff_gen-480x208.png 480w,/ assets/img/rankprop_knockoff_gen.png 691w" title="Knockoff Generation">
+
+    </div>
+</div>
+<div class="caption">
+    Conceptual representation of generating network knockoff
+</div>
+
+<p>Using either the original network or knockoff network, we can generate a Rankprop ranking. We call the ranking generated with original network the original ranking and the ranking generated from knokocff network the knockoff ranking. <br>
+Each protein within the original ranking would then “compete” with their knockoff counterpart, in terms of the Rankprop score. In principle, those real homologies would stand out from the “competition”, and therefore have a low q-value. Lastly, using the computed q-value, we can find FDR-controlled cutoff for protein homology prediction.</p>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/rankprop_knockoff_rank-480x217.png" srcset="    /assets/resized/rankprop_knockoff_rank-480x217.png 480w,/ assets/img/rankprop_knockoff_rank.png 784w" title="Knockoff ranking">
+
+    </div>
+</div>
+<div class="caption">
+    Conceptual representation of generating network knockoff
+</div>
+
+<p>Related Links:</p>
+<ul>
+  <li>My <a href="https://www.youtube.com/watch?v=dZ4pvAE1OHg&amp;t=1s" target="_blank" rel="noopener noreferrer">talk</a> about this project at <a href="https://www.washington.edu/undergradresearch/symposium/" target="_blank" rel="noopener noreferrer">UW’s 24th Annual Undergraduate Research Symposium</a>
+</li>
+  <li>
+<a href="../../assets/pdf/fdr_rankprop_slides.pdf" target="_blank">Slides</a> about this project</li>
+  <li>Project <a href="../../assets/pdf/linkpred.pdf" target="_blank">proposal</a>
+</li>
+</ul>
+
+  </article>
 
 </div>
 
@@ -314,8 +289,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2022 Winston  Chen.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    © Copyright 2022 Winston  Chen.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
     
     

@@ -12,7 +12,7 @@
   Winston  Chen
 
 
-  | blog
+  | Error-controlled DNN Interaction Detection
 
 </title>
 <meta name="description" content="Aspiring ML researcher in computational biology.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://winstonchenn.github.io/blog/">
+<link rel="canonical" href="https://winstonchenn.github.io/projects/NID/">
 
 
 <!-- Dark Mode -->
@@ -80,8 +80,6 @@
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -171,8 +169,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -191,119 +189,59 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Error-controlled DNN Interaction Detection</h1>
+    <p class="post-description">May 2021 - Present</p>
+  </header>
+
+  <article>
+    <p>Despite their outstanding empirical performance, <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" rel="noopener noreferrer">deep neural networks (DNNs)</a> have been mostly treated as black box models, preventing their adoption in many low-error-tolerant domains, such as healthcare, finance, robotics, and cybersecurity defense. In such contexts, interpreting DNN to reason about why certain decisions are made is crucial.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
-  <ul class="post-list">
-    
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/DNN_blackbox-1400x933.jpeg" srcset="    /assets/resized/DNN_blackbox-480x320.jpeg 480w,    /assets/resized/DNN_blackbox-800x533.jpeg 800w,    /assets/resized/DNN_blackbox-1400x933.jpeg 1400w,/ assets/img/DNN_blackbox.jpeg 1740w" title="DNN black-box">
 
-    
-    
-    
-    
+    </div>
+</div>
+<div class="caption">
+    Illustration of DNN's black-box nature<br>
+    source:
+    <a href="https://bigdataforbanking.com/blog/machine-learning-without-black-boxes" target="_blank" rel="noopener noreferrer">
+        https://bigdataforbanking.com/blog/machine-learning-without-black-boxes
+    </a>
+</div>
 
-    <li>
-      <h3><a class="post-title" href="/blog/2021/diagrams/">a post with diagrams</a>
-      </h3>
-      <p>an example of a blog post with diagrams</p>
-      <p class="post-meta"> 1 min read &nbsp; &middot; &nbsp;
-        July 4, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
+<p>Inspired by <a href="https://arxiv.org/pdf/1809.01185.pdf" target="_blank" rel="noopener noreferrer">existing works</a> which interpret a DNN model by selecting a subset of explanatory features subject to a controlled error rate. We are interested in detecting higher-order information captured by a DNN model, i.e., interactions between features. Modelling the fact that features often have joint effects with other features is especially useful for scientific discoveries and hypothesis validation. For example, gene-gene, gene-environment, gene-drug and gene-disease interactions are key elements in explaining genetic mechanisms in biomedical applications.</p>
 
-          
+<p>This project aims at combining a recently descibed DNN feature interaction detection algorithm (<a href="https://arxiv.org/pdf/1705.04977.pdf" target="_blank" rel="noopener noreferrer">NID</a>) with the <a href="https://web.stanford.edu/group/candes/knockoffs/" target="_blank" rel="noopener noreferrer">knockoff filter</a> to produce error-controled DNN interaction prediction results.</p>
 
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a>
-      </h3>
-      <p>an example of a distill-style blog post and main elements</p>
-      <p class="post-meta"> 7 min read &nbsp; &middot; &nbsp;
-        May 22, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a>
-      </h3>
-      <p>a quick run down on accessing github metadata.</p>
-      <p class="post-meta"> 1 min read &nbsp; &middot; &nbsp;
-        September 28, 2020
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2020">
-          <i class="fas fa-calendar fa-sm"></i> 2020 </a>
-
-          
-
-          
-          &nbsp; &middot; &nbsp;
-            
-            <a href="/blog/category/sample-posts">
-              <i class="fas fa-tag fa-sm"></i> sample-posts</a> &nbsp;
-              
-            <a href="/blog/category/external-services">
-              <i class="fas fa-tag fa-sm"></i> external-services</a> &nbsp;
-              
-          
-    </p>
-    </li>
-
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/NID_diagram-480x393.png" srcset="    /assets/resized/NID_diagram-480x393.png 480w,/ assets/img/NID_diagram.png 622w" title="DNN architecture">
+
+    </div>
+</div>
+<div class="caption">
+    Proposed DNN architecture for error-controlled interaction detection
+</div>
+
+<p>As shown in the diagram above, our approch invovles adding a pairwise coupling layer (inspired by <a href="https://arxiv.org/pdf/1809.01185.pdf" target="_blank" rel="noopener noreferrer">DeepPINK</a>) to the DNN models that takes the original data and knockoff data as input. By computing the interaction scores for both original feature interacitons and knockoff feature interactions, we can use knockoff interactions as a negative control to filter out insignificant interactions and find cutoff for interaction predctions that achieves a desired False Discovery Rate (FDR).</p>
+
+<p>Related Links:</p>
+<ul>
+  <li>Project <a href="../../assets/pdf/interactionfdr.pdf" target="_blank">proposal</a>
+</li>
+  <li>
+<a href="https://docs.google.com/presentation/d/12IL4a6uFFz89EPAgrQ7M0iAppqoHMpL-hY7RwWRPCcU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Slides</a> about this project</li>
+</ul>
+
+  </article>
 
 </div>
 
@@ -314,8 +252,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2022 Winston  Chen.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    © Copyright 2022 Winston  Chen.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
     
     
